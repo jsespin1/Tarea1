@@ -1,0 +1,22 @@
+
+<%= stylesheet_link_tag "application", media: "all" %>
+<%= javascript_include_tag "application" %>
+
+<div>
+	<h1 class="header">  Nuevo Integrante  </h1>
+
+
+	<div class = "formulario">
+			<%= simple_form_for @animal do |f| %>
+			  <%= f.input :nombre, :input_html => { :wrap => :soft, :rows => 2}%>
+			  <%= f.input :tipo %>
+			  <%= f.input :nacimiento, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year, discard_day: false,
+                              order: [:day, :month, :year] %>
+			  <%= f.input :origen %>
+			  <%= f.input :comentarios, as: :text %>
+			  <%= f.button :submit%>
+			<% end %>
+	</div>
+	
+</div>

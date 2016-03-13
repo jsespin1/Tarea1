@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  tipo: MyString
+  nacimiento: 2016-03-11 18:12:23
+  origen: MyString
+  comentarios: MyText
+
+two:
+  nombre: MyString
+  tipo: MyString
+  nacimiento: 2016-03-11 18:12:23
+  origen: MyString
+  comentarios: MyText
