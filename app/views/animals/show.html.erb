@@ -3,6 +3,36 @@
 <%= javascript_include_tag "application" %>
 
 <div>
-	<h1 class="header">  Nuevo Integrante  Funciono</h1>
+	<h1 class="header">  <%= @animal.nombre %> </h1>
+
+
+
+			<div class = "animal_show">
+				<div class = "animal_img">
+						<%  @tipo = @animal.tipo   %>
+						<%  @ruta = @tipo + ".jpg"   %>
+						<%= image_tag(@ruta, :class=> "img_animal") %>
+				</div>	
+
+
+				<div class = "animal_inf">
+
+					<p class = "animal_tipo"> <%= "Tipo:  "  %>	<%= @animal.tipo  %>	</p>
+
+					<p class = "animal_nac"> <%= "Fecha de Nacimiento:  "  %>	<%= @animal.nacimiento %>	</p>
+
+					<p class = "animal_ori"> <%= "Origen:  "  %>	<%= @animal.country_name  %>	</p>
+
+					<p class = "animal_comm"> <%= "Comentarios:  "  %>	<%= @animal.comentarios %>	</p>	
+				
+				</div>	
+
+			</div>	
+
+			<div class = "footer">
+				<%= button_to "Volver", animals_path, method: :get%>
+				<%= button_to "Editar ", edit_animal_path(@animal), method: :get%>
+			</div>
+			
 	
 </div>

@@ -9,13 +9,27 @@
 	<div class = "formulario">
 			<%= simple_form_for @animal do |f| %>
 			  <%= f.input :nombre, :input_html => { :wrap => :soft, :rows => 2}%>
-			  <%= f.input :tipo %>
+			  <div class = "input tipo">
+			  		<label class = "text optional">  <%= "Tipo" %>   </label>
+			  		<%= f.select :tipo, Animal::ANIMAL_TYPES, label: false %>
+			  </div>
+			  
 			  <%= f.input :nacimiento, as: :date, start_year: Date.today.year - 90,
                               end_year: Date.today.year, discard_day: false,
                               order: [:day, :month, :year] %>
-			  <%= f.input :origen %>
-			  <%= f.input :comentarios, as: :text %>
-			  <%= f.button :submit%>
+
+              <div class = "input origen">
+              	  <label class = "text optional">  <%= "Origen" %>   </label>
+				  <%= f.country_select :origen, label: true %>
+			  </div>
+
+			   <%= f.input :comentarios, as: :text %>
+				  
+
+				<a class = "footer">
+					<%= f.button :submit%>
+				</a>
+
 			<% end %>
 	</div>
 	

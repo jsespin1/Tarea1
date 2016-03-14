@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 #Gemas que se agregaron
 
 gem 'simple_form'
+gem 'country_select'
 
 #######
 

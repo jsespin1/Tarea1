@@ -1,0 +1,43 @@
+
+<%= stylesheet_link_tag "application", media: "all" %>
+<%= javascript_include_tag "application" %>
+
+<div>
+	<h1 class="header">  <%= @animal.nombre  %></h1>
+
+
+			<div class = "formulario">
+					<%= simple_form_for @animal do |f| %>
+					  <%= f.input :nombre, :input_html => { :wrap => :soft, :rows => 2}%>
+					  <div class = "input tipo">
+					  		<label class = "text optional">  <%= "Tipo" %>   </label>
+					  		<%= f.select :tipo, Animal::ANIMAL_TYPES, label: false %>
+					  </div>
+					  
+					  <%= f.input :nacimiento, as: :date, start_year: Date.today.year - 90,
+		                              end_year: Date.today.year, discard_day: false,
+		                              order: [:day, :month, :year] %>
+
+		              <div class = "input origen">
+		              	  <label class = "text optional">  <%= "Origen" %>   </label>
+						  <%= f.country_select :origen, label: true %>
+					  </div>
+
+					   <%= f.input :comentarios, as: :text %>
+						  
+
+						<a class = "footer">
+							<%= f.button :submit%>
+						</a>
+
+					<% end %>
+			</div>
+
+
+			<div class = "footer">
+				<%= button_to "Volver", animal_path, method: :get%>
+				<%= button_to "Borrar Animal", animal_path(@animal), method: :delete, data: { confirm: 'Are you sure?' }%>
+			</div>
+
+	
+</div>

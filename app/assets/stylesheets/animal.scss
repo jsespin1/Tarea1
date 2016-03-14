@@ -10,3 +10,106 @@
     margin-right: auto;
     border-style: groove;
 }
+
+.edit_animal{
+	width:60%;
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+    border-style: groove;
+}
+
+div.animal_comentarios{
+	
+}
+
+
+.footer > .btn{
+	background-color:#2fd62f;
+    -moz-border-radius:8px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    color:#fafafa;
+    font-family:arial;
+    font-size:12px;
+    font-weight:bold;
+    padding:7px 24px;
+    text-decoration:none;
+    text-shadow:0px 0px 0px #70706f;
+    border-color: white;
+}
+
+.new_animal > .input {
+	margin-left:3%;
+	padding-bottom: 5px;
+	padding-top: 5px;
+
+	.optional{
+		padding-right: 4px;
+	}
+}
+
+
+.animal_box {
+    float:left;
+    position: relative;
+    width: 40%;
+    height: 150px;
+    /* padding-bottom: 30%;  = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    overflow:hidden;
+    border: 2px solid #73AD21;
+    .animal_img{
+    	width:50%;
+    	height:100%;
+    	float:left;
+    	.img_animal{
+			width:100%;
+			height: 100%;
+		}
+    }
+    .animal_inf{
+    	width:50%;
+    	height:100%;
+    	float:left;
+    	overflow:scroll;
+    	p{
+    		padding-left:8px;
+    		padding-top:5px;
+    	}
+    }
+}
+
+div.animal_show{
+	height:300px;
+	width:50%;
+	margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+    .animal_img{
+    	width:50%;
+    	height:100%;
+    	float:left;
+    	.img_animal{
+			width:100%;
+			height: 100%;
+		}
+    }
+    .animal_inf{
+    	width:50%;
+    	height:100%;
+    	float:left;
+    	overflow:scroll;
+    	p{
+    		padding-left:8px;
+    		padding-top:5px;
+    	}
+    }
+
+}
+
+
+

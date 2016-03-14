@@ -5,6 +5,34 @@
 
 	<h1 class="header">  Animales  </h1>
 
+	<% if @animals.count == 0 %>
+		  <%= "Este zoologico no tiene animales" %>
+	<% end %>
+
+	<div class = "animals_box">
+		<% @animals.each do |a|  %>
+			<div class = "animal_box">
+				<div class = "animal_img">
+					<%  @tipo = a.tipo   %>
+					<%  @ruta = @tipo + ".jpg"   %>
+					<%= link_to image_tag(@ruta, :class=> "img_animal"), animal_path(a) %>
+
+				</div>	
+
+
+				<div class = "animal_inf">
+					<p class = "animal_nombre"> <%= "Nombre:  "  %>	<%= a.nombre  %>	</p>
+
+					<p class = "animal_tipo"> <%= "Tipo:  "  %>	<%= a.tipo  %>	</p>
+
+					<p class = "animal_ori"> <%= "Origen:  "  %>	<%= a.country_name %>	</p>
+			
+				</div>	
+
+			</div>	
+		<% end %>
+	</div>	
+
 
 	<div class = "bottom">
 		<%= button_to "Agregar", new_animal_path, method: :get%>
